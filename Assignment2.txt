@@ -1,0 +1,340 @@
+1. Write a script to create 10 directories, say a1,a2,...,a10
+Ans:-->
+         #!/bin/bash
+  
+         echo "Enter no."
+         read num
+         for((i=1 ;i<=num; i++))
+         do
+          mkdir a$i
+         done
+
+2. Write a menu based script to perform following string operations
+
+a) To find length of a string
+c) Copying string
+d) Concatenation of strings
+e) Compare two strings
+f) Reversing a string
+
+>       #!/bin/bash
+   
+        do
+        echo '1.Find length'
+        echo '2.Copying string'
+        echo '3.Concate of string'
+        echo '4.compare to sring'
+        echo '5.Reverse string'
+		read str1
+		read option
+		case $option in
+        1) echo ${#str1};;
+
+        2) str2=$str1
+          echo $str2
+          ;;
+        3)  str1="akshay"
+            str2="nemade"
+                echo $str1$str2
+                ;;
+        4) str1="akshay"
+           str2="nemade"
+
+           if [ $str1 == $str2 ]
+           then
+            echo "Equal"
+           else
+            echo "Not equal"
+           fi
+            ;;
+        5) echo $str1 | rev
+                ;;
+  
+
+
+
+3.Write a shell script to rename all files in the current directory with numeric continuous value
+->   for((i=1;i<10;i++))
+   do
+        mv a$i file$i
+   done
+
+4. Write a script that print environment variable(Print $HOME,$PATH,$SHELL,$HISTORY,$LOGNAME,$TERM)
+->    
+         echo "Path = $PATH"  
+         echo "Shell = $SHELL"
+         echo "History = $HISTORY"
+         echo "Logname = $LOGNAME"
+         echo "Term = $TERM"
+
+
+5. Write a shell script to print all files permissions in current directory(Not name or other details)(Use cut commands)
+-> 
+     ls -la | cut -b 1-10
+     ls -la | cut -c 1-10
+
+6. Write a shell script to print all files permissions and name of file
+-> 
+        #!/bin/bash
+
+        ls -l | awk '{ print $1 }'
+
+7.Write a shell script to print all files name and size greater than 5K
+->   
+       #!/bin/bash
+	for i in *
+	do
+		if [ -e $i ]
+		then
+			file=`ls -l $i | awk '{print $5}'`
+			if (( $file > 5000 ))
+			then
+				ls -l $i
+			fi 
+		fi
+	done
+
+=====================================================================================================
+
+##SHELL_PROGRAMS
+
+1. Write a script To check given year is leap or not.
+
+->      #!/bin/bash
+	echo 'Enter a year : '
+	read year
+	if (( $year%4 == 0 && $year%100 != 0 || $year%400 == 0))
+	then
+		echo 'Leap Year'
+	else
+		echo 'Not a Leap Year'
+	fi
+    
+2. Write a script to print day of the week using
+	
+   a) case :->
+
+          echo "enter number between 1 to 7"
+             read num
+
+          case $num in
+
+             1) echo "Sunday" ;;
+             2) echo "Monday" ;;
+             3) echo "Tuesday" ;;
+             4) echo "Wednesday" ;;
+             5) echo "Thursday" ;;
+             6) echo "Friday" ;;
+             7) echo "Saturday" ;;
+
+           esac
+
+  
+  a) elif:-	
+            
+
+	echo 'Enter the no of Day : '
+	read day
+
+	if [ $day == 1 ]
+	then
+		echo 'Sunday'
+	elif [ $day == 2 ]
+	then
+		echo 'Monday'
+	elif [ $day == 3 ]
+	then
+		echo 'Tuesday'
+	elif [ $day == 4 ]
+	then
+		echo 'Wednesday'
+	elif [ $day == 5 ]
+	then
+		echo 'Thrusday'
+	elif [ $day == 6 ]
+	then
+		echo 'Friday'
+	elif [ $day == 7 ]
+	then
+		echo 'Saturday'
+	else
+		echo 'Invalid Entry'
+	fi
+
+ 
+
+3. 
+  a) Write a script to find biggest of three no.s
+->
+
+                echo "enter 1st number"
+                  read num1
+                echo "enter 2nd number"
+                   read num2
+                echo "enter 3rd number"
+                   read num3
+
+                if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+                 then 
+                   echo " $num1 is greatest number"
+
+                elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+                   then
+                     echo " $num2 is greatest number"
+                else
+                     echo " $num3 is greatest number"
+                fi
+
+
+b) To find avg of 3 no.s, read no.s from keyboard
+->
+                     echo "enter 1st number"
+                      read num1
+                     echo "enter 2st number"
+                      read num2
+                     echo "enter 3st number"
+                      read num3
+
+                   sum=`expr $num1 + $num2 + $num3`
+                      avg=`expr $sum / 3`
+                       echo "Sum = $sum"
+                      echo "Average = $avg"
+
+4. Write a program to check whether given no.is even or odd
+->
+           read  number
+           if [ $((number%2)) -eq 0 ]
+           then
+           echo "Number is even."
+           else
+           echo "Number is odd."
+           fi
+
+5. Write a program to print calendar of current month in next year,previous years.
+->
+         #!/bin/bash
+
+	mon=$(date | awk '{print $2}')
+	year=$(date | awk '{print $6}')
+
+	let "prev=year-1" "next=year+1"
+
+	cal $mon $prev
+	cal $mon $year
+	cal $mon $next
+
+
+6.Write a program to find sum and product of two no.s using let,expr,bc
+->
+  
+  a) let:->
+    
+
+       a=10
+       b=20
+ 
+       let "sum=$(( $a + $b ))"
+ 
+       echo $sum
+
+ b) expr:->
+
+         echo "Enter two numbers"
+         read num1 num2
+         sum = 'expr $num1 + $num2'
+         echo "The sum is = $sum"
+
+
+  c) bc:->
+
+      echo 'scale=4;10+20' | bc
+
+
+7. Write a script to generate Fibonacci series.
+
+       #!/bin/bash
+
+	echo 'Enter the range till you want to calculate the Fibonaccci Series : '
+	read range
+	i=1
+	prev=0
+	newprev=0
+	while (( $i+$prev < $range ))
+	do
+		echo $(expr $prev + $i)
+		newprev=$prev
+		prev=$i
+		i=$(expr $newprev + $i)
+	done
+ 
+
+
+8. Write a shell script to reverse the single strings. 
+->
+
+       #!/bin/bash
+
+	echo 'Enter a string : '
+	read str
+	rev=""
+	len=${#str}
+	for (( i=$len; i>0; i-- ))
+	do
+		temp=$(expr $str | cut -c $i)
+		rev=$rev$temp
+	done
+
+	echo $rev
+
+
+9.Write a shell script to reverse the list of strings and reverse each string further in the list.
+->
+             #!/bin/bash
+
+
+	echo 'Enter array of Strings : '
+	read -a arr
+
+	min=0
+	max=`expr ${#arr[@]} - 1`
+	x=$max
+	while (( $min <= $max ))
+	do
+		newArr[$min]=${arr[$max]}
+		newArr[$max]=${arr[$min]}
+		(( min++ ))
+		(( max-- ))
+	done
+
+	max=$x
+
+	for (( i=0; i<=max; i++ ))
+	do
+		rev=""
+		str=${newArr[$i]}
+		let "len=${#str} -1"
+		for (( j=$len; j>=0; j-- ))
+		do
+			rev="$rev${str:$j:1}"
+		done
+		newArr[$i]=$rev
+	done
+
+	echo ${newArr[@]}
+
+10. Write a shell script to print the reverse of an input number.
+->
+            #!/bin/bash
+
+	echo 'Enter a number : '
+	read num
+	n=$num
+	sum=0
+	rem=0
+	while (( $n > 0 ))
+	do
+		rem=`expr $n % 10`
+		sum=`expr $sum \* 10 + $rem`
+		n=`expr $n / 10`
+	done
+	echo 'Reverse : ' $sum

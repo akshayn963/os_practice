@@ -1,0 +1,296 @@
+Q1. Explore the following commands with various options, refer man pages for 
+    further help 
+-----> 
+a) date:-->1) date +%a
+           2) date +%A
+           3) date +%b
+           4) date +%B
+           5) date +%c
+           6) date +%C
+           7) date +%d
+           8) date +%D
+           9) date +%e
+           10) date +%F
+           11) date +%g
+           12) date +%G
+           13) date +%h
+           14) date +%H
+           15) date +%I
+           16) date +%j
+           17) date +%k
+           18) date +%l
+           19) date +%m
+           20) date +%M
+           21) date +%n
+           22) date +%N
+           23) date +%p
+           24) date +%P
+           25) date +%r
+           26) date +%R
+           27) date +%s
+           28) date +%S
+           29) date +%t
+           30) date +%T
+           31) date +%u
+           32) date +%U
+
+ b) cal:--->cal 2020
+
+ c) bc :-->1) bc -h
+           2) bc -i 
+           3) bc -l 
+           4) bc -w 
+           5) bc -s 
+           6) bc -q 
+            7) bc -v
+           
+d) echo  :--> echo "hello"
+
+e) who :--> who [options] [filename] 
+
+
+f) whoami:--> whoami [OPTION]
+
+ g) logname :-->logname [OPTION]
+
+g) uname :--> uname [OPTION]
+
+h)seq :--> seq [OPTION]
+
+i) clear:--> this command is used to clear terminal.
+
+Q2.	A) Create three directory a b and c and create a.txt,b.txt and c.txt
+		in each directory respectively and then copy c directory into the a.
+        ANS:-> mkdir a b c
+               touch a.txt b.txt c.txt
+               cp -r c a
+
+	B)Move Directory b to c.
+        ANS:-> mv b c
+
+	C)Create alias of ls -lh command to your name.
+        ANS:->alias Akshay="ls -lh"
+           
+
+	D)Change Directory name a to cdac.
+        ANS:-> mv a CDAC
+
+Q3. A) Create five files file1.txt , file2.txt ,file3.txt file4.txt and
+    file5.txt with some text inside it. Search for 's' character
+    inside all the files using grep command.
+    Also Use cat to view all file content together.
+ANS:--> 
+
+
+        touch file1.txt file2.txt file3.txt file4.txt file5.txt 
+
+        cat file*.txt
+        In file 1In file2In File 3In file 4
+        In file 5
+
+        grep 's' file*.txt
+
+B)Create file.txt using cat and edit that using nano editor.
+ANS:->        Cat > file.txt
+               nano file.txt
+	      
+
+c)Create 5 empty files using touch command
+ANS:->         touch f1.txt f2.txt f3.txt f4.txt f5.txt
+
+D)Remove previously created directory a , b and c.
+ANS:->         rm -r a 
+               rm -r b
+               rm -r c
+
+Q4. Create a file with some content using vi editor
+     vi File1.txt
+	a) Display the file using cat command
+        Ans:-> cat File1.txt
+
+	b) Display line numbers along with content
+        ans:->cat -n File1.txt
+
+	c) Display the file in reverse order using tac
+        Ans:-> tac File1.txt
+
+	d) Combine multiple files using cat command
+        Ans:-> 	 cat File1.txt File2.txt > File3.txt
+
+Q5. Create Random some files and sub directories.
+	a) display files row wise, column wise, 1 per row
+        Ans:-> column f1.txt
+
+	b) sort the files in ascending, descending order
+        Ans:->sort  file1.txt
+              sort -r file1.txt
+
+
+	c) Create some hidden files and sub directories and display them using “ls -a”
+        Ans:->cat > .hello.txt
+              ls -a
+
+
+	d) Change time stamp of some files and directories using touch command and display the files          using ls -t ls -rt
+        Ans:-> stat d1.txt
+
+	e) Recursive display contents of your home directory.
+        Ans:-> ls -R
+
+	f) display all attributes of files and directories using ls -l
+        Ans:-> ls -l
+
+	g) display attributes of a directory using ls -ld
+
+        Ans--> ls -ld
+
+==================================================================================
+Q1. Create directory of your name and then create 4 files inside it named
+	a.txt, b.txt, c.txt and d.sh. And change the directory permission to
+	only user and also files permission to only user such that
+-->   mkdir akshay
+      touch a.txt b.txt c.txt d.sh
+
+
+		a)user can read and write the file a.txt and b.txt
+
+                ANS:-->    chmod 600 a.txt b.txt
+
+		b)user can write the file c.txt
+                ANS:-> chmod 200 c.txt
+
+		c)user can exectuable the file d.sh. Make
+			Contents of file d.sh:
+			#/bin/sh
+			ls -lh
+                Ans:-> chmod 100 d.sh
+	        cat >> d.sh
+
+
+Q2. Change the permission of the previous directory to executable only.
+	Analyze the output.
+Ans:-> chmod 010 hello
+
+Q3. Change the permission of the previous directory to read only.
+	Analyze the output.
+ANS:--> chmod 040 hello
+
+Q4. Use echo to list the all files of your home directory.
+Ans:-> echo .*
+
+Q5. Use echo to list the all files of /etc/ directory
+Ans:-> echo .*  /etc /directory
+
+Q6. Use echo to list the all files of /etc/ directory with extension name .conf
+Ans:--> find /etc -type f -name "*.conf"
+
+Q7. Use echo to append your name to a.txt
+Ans:--> echo 'Akshay' >> a.txt
+
+==================================================================================
+
+Note:Many operation might not work.Analyze them
+1.	Create Three level nested directory a,b and c
+Ans:->
+        touch a-->Cd a --> Mkdir b -->touch .a.txt--> touch a.txt
+	Cd b--> Mkdir b-->touch .b.txt--> touch b.txt
+        Cd c -->Mkdir c-->touch .c.txt-->touch c.txt
+
+
+       a)Create at least one hidden file in each directory
+       Ans:->
+               touch a --> Cd a --> Mkdir b -->touch .a.txt
+	       Cd b --> Mkdir b -->touch .b.txt
+               Cd c --> Mkdir c --> touch .c.txt
+
+
+       b)Create at least one normal text file in each directory
+       Ans:->
+               touch a --> Cd a --> Mkdir b --> touch a.txt
+         	Cd b --> Mkdir b -->touch b.txt
+                Cd c --> Mkdir c --> touch c.txt
+
+       c)Copy c into a
+       Ans:-> cp -r c a
+
+       d)Copy file inside a into b
+       Ans:-> cp -r a b
+
+2.	Change the third level directory c permission to read only
+Ans:->  chmod 040 c
+
+3.	Try copying third level c directory to outside of a
+Ans:--> cp –r c b
+
+4.	Create the directory  “data“ inside b
+Ans:-> cd b --> mkdir data
+
+
+5.	Change the permission of b to read and write only
+Ans:--> chmod 060 b
+
+6.	Create directory “data2”  inside b
+Ans:->  cd b --> mkdir data2
+
+
+7.	Create data.txt file inside b
+Ans:->  cd b --> touch data.txt
+
+
+8.	Rename the second level directory c to copied_dir
+Ans:-->   mv c copied_dir
+
+9.	Change permission of copied_dir to only executable
+Ans:-->   chmod 010 copied_dir
+
+10.	Try ls on copied_dir
+Ans:-->  ls cannot run because of executable only cannot read
+
+11.	Try moving copied_dir to outside of a
+Ans:->   cannot move dir to outside because of restriced permissions
+
+
+12.	Try moving data directory outside of a
+Ans:->   cannot move, permission access denied
+
+13.	Now change the owner of the directory a to root
+Ans:->  sudo chmod
+
+14.	Change permission of a to read write and executable to only user
+Ans:->   Chmod u+rwx a
+
+
+15.	Try creating directory sample inside a
+Ans:->   Mkdir a/sample
+
+16.	Create directory x outside a
+Ans:->   Mkdir x
+
+17.	Try moving x inside a
+Ans:->   Mv x ./a
+
+18.	Create directory movies
+Ans:->  mkdir movies
+
+19.	Change group of movies to sudo
+Ans:->  sudo usermod -aG sudo newuser
+
+20.	Change group of movies to avahi
+Ans:-   chgrp scifi myfile
+	
+	  ls -l myfile
+
+21.	Try changing permission after changing ownership to root
+ans:-   chmod a=rwx a
+
+22.	Try Changing permission after changing group to sudo without sudo
+ans:-   pkexec chmod go-w /usr/lib/sudo/sudoers.so
+
+23.	Try Changing owner and group both to root
+Ans:-  sudo chown -R username:group directory
+
+24.	Try changinging permission
+Ans:-   sudo usermod -aG sudo newuser
+
+25.	Try deleting the file
+ans:-    rm -rf a.txt
