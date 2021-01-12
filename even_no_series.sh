@@ -1,9 +1,8 @@
 echo "enter value of n"
 read n
-i=0
-while test $i -le $n
+
+for ((i = 0; i < n; i += 2)); 
 do
- echo "$i"
- i= `expr $i + 2`
+    echo "$i"
 done
 
