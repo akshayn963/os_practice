@@ -1,37 +1,37 @@
 Q1. Explore the following commands with various options, refer man pages for 
     further help 
 -----> 
-a) date:-->1) date +%a
-           2) date +%A
-           3) date +%b
-           4) date +%B
-           5) date +%c
-           6) date +%C
-           7) date +%d
-           8) date +%D
-           9) date +%e
-           10) date +%F
-           11) date +%g
-           12) date +%G
-           13) date +%h
-           14) date +%H
-           15) date +%I
-           16) date +%j
-           17) date +%k
-           18) date +%l
-           19) date +%m
-           20) date +%M
-           21) date +%n
+a) date:-->1) date +%a   output=>Tue
+           2) date +%A         =>Tuesday
+           3) date +%b         =>Jan
+           4) date +%B         =>January
+           5) date +%c         =>Tue Jan 12 06:51:52 2021
+           6) date +%C         =>20
+           7) date +%d         =>12   date
+           8) date +%D         =>01/12/21   full date
+           9) date +%e         =>12      date
+           10) date +%F        =>2021-01-12   date in this format
+           11) date +%g        =>21    year
+           12) date +%G        =>2021 complete year
+           13) date +%h        =>Jan
+           14) date +%H        => 06     hr
+           15) date +%I        =>06     hr
+           16) date +%j        =>012
+           17) date +%k        => 6   hr
+           18) date +%l        => 6   hr
+           19) date +%m        =>01   month
+           20) date +%M        =>59   minutes
+           21) date +%n        
            22) date +%N
-           23) date +%p
-           24) date +%P
-           25) date +%r
-           26) date +%R
-           27) date +%s
+           23) date +%p        =>AM     AM/PM
+           24) date +%P        =>am      am/pm
+           25) date +%r        =>07:02:18 AM   time
+           26) date +%R        =>07:02         time format hh:mm
+           27) date +%s        
            28) date +%S
-           29) date +%t
-           30) date +%T
-           31) date +%u
+           29) date +%t       
+           30) date +%T        =>07:04:04    time withoout am/pm
+           31) date +%u        
            32) date +%U
 
  b) cal:--->cal 2020
