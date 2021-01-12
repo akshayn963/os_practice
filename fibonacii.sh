@@ -1,3 +1,5 @@
+solution 1 =====>
+
 echo "Program to Find Fibonacci Series"
   echo "How many number of terms to be generated ?"
   read n
@@ -16,6 +18,8 @@ echo "Program to Find Fibonacci Series"
       y=$z
   done
   
+solution 2=====>
+
 # #!/bin/bash
 # c=2
 # a=1
@@ -33,3 +37,20 @@ echo "Program to Find Fibonacci Series"
 # b=$d
 # c=$((c+1))
 # done
+
+solution 3=====>
+
+#  #!/bin/bash
+
+# 	echo 'Enter the range till you want to calculate the Fibonaccci Series : '
+# 	read range
+# 	i=1
+# 	prev=0
+# 	newprev=0
+# 	while (( $i+$prev < $range ))
+# 	do
+# 		echo $(expr $prev + $i)
+# 		newprev=$prev
+# 		prev=$i
+# 		i=$(expr $newprev + $i)
+# 	done
